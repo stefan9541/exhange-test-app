@@ -1,0 +1,21 @@
+{
+  "name": "exchange-test-app",
+  "version": "1.0.0",
+  "description": "Test application",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "exchange-test-app"
+  },
+  "keywords": [
+    "challenge"
+  ],
+  "author": "Stepan Tabaka",
+  "license": "ISC"
+}
