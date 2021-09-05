@@ -1,18 +1,17 @@
 const path = require("path");
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: `${__dirname}/client/index.js`,
+  entry: path.resolve(path.join(__dirname, "src", "client", "index.js")),
   mode: "development",
   module: {
     rules: [
       {
-        text: /\.(jsx|js)$/,
+        test: /\.(jsx|js)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
-        options: {
-          presets: "@babel/env",
-        },
+        options: { presets: ["@babel/env"] },
       },
       {
         test: /\.css$/,
@@ -20,26 +19,30 @@ module.exports = {
       },
     ],
   },
-  output: {
-    output: {
-      path: path.resolve(__dirname, "dist/"),
-      filename: "bundle.js",
-      publicPath: "/dist/",
-      chunkFilename: "[name].js",
-      clean: true,
-    },
-  },
   resolve: {
-    extensions: ['*','.js','.jsx'],
+    extensions: ["*", ".js", ".jsx"],
     fallback: {
       path: require.resolve("path-browserify"),
     },
   },
-  devServer: {
-    contentBase: path.join(__dirname, "public/"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
+  output: {
+    path: path.join(__dirname, "public"),
+    filename: "bundle.js",
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public/"),
+      publicPath: "/public/",
+    },
+    port: 3000,
+    open: true,
+    webSocketServer: false,
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public", "template.html"),
+      filename: path.resolve(__dirname, "public", "index.html"),
+    }),
+  ],
 };
