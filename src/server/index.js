@@ -28,7 +28,7 @@ const startExpressApp = () => {
     next();
   });
 
-  // routes(app);
+  routes(app);
 
   startServer();
 };

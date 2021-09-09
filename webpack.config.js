@@ -14,8 +14,8 @@ module.exports = {
         options: { presets: ["@babel/env"] },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },
@@ -36,7 +36,6 @@ module.exports = {
     },
     port: 3000,
     open: true,
-    webSocketServer: false,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
