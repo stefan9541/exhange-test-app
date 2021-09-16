@@ -6,11 +6,18 @@
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.4",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "autoprefixer": "^10.3.4",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
     "postcss": "^8.3.6",
     "postcss-csso": "^5.0.1",
@@ -19,6 +26,7 @@
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.51.2",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.0"
   },
@@ -27,7 +35,8 @@
     "server:dev": "nodemon ./src/server/index.js",
     "start": "node ./src/server/index.js",
     "client": "webpack serve",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "bundle:analyzer": "webpack-bundle-analyzer ./stats.json --mode server -p 9999"
   },
   "repository": {
     "type": "git",
@@ -41,6 +50,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
     "mongoose": "^5.13.8",
     "path-browserify": "^1.0.1",
     "react": "^17.0.2",
