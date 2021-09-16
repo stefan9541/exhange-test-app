@@ -8,6 +8,6 @@
 ### Deployment
 > run the following commands, the order is important.
 
-- npm i; `if the new dependencies have been installed`
+- npm i; `only if the new dependencies have been installed`
 - npm run build
 - npm start
