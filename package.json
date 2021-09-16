@@ -36,7 +36,8 @@
     "start": "node ./src/server/index.js",
     "client": "webpack serve",
     "build": "webpack --mode production",
-    "bundle:analyzer": "webpack-bundle-analyzer ./stats.json --mode server -p 9999"
+    "bundle:analyzer": "webpack --mode production --profile --json > stats.json",
+    "bundle:server": "webpack-bundle-analyzer ./stats.json -s gzip --mode server -p 9999"
   },
   "repository": {
     "type": "git",
