@@ -24,9 +24,10 @@
   },
   "scripts": {
     "test": "npm run test",
-    "server": "nodemon ./src/server/index.js",
-    "start": "webpack serve",
-    "dev": "webpack --mode development"
+    "server:dev": "nodemon ./src/server/index.js",
+    "start": "node ./src/server/index.js",
+    "client": "webpack serve",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
