@@ -50,7 +50,9 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "express-validator": "^6.12.1",
     "helmet": "^4.6.0",
     "mongoose": "^5.13.8",
     "path-browserify": "^1.0.1",
